@@ -28,4 +28,4 @@ Open your web browser and navigate to the specified local host to interact with 
 Contributions are welcome! If you find any issues or have ideas for improvements, feel free to create an issue or submit a pull request.
 
 ## License
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](LICENSE).
