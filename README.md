@@ -13,15 +13,22 @@ EmoAnalyze is a Python-based project that aims to analyze sentiments in YouTube 
 
 ## Dependencies
 Python
+
 Streamlit
+
 NLTK (Natural Language Toolkit)
+
 Other required libraries
 
 ## How to Use
 -Clone the repository to your local machine.
+
 -Install the required dependencies using ```pip install -r requirements.txt```
+
 -Add you YouTube API Key in .env file ```API_KEY=your_api_key```
+
 -Run the Streamlit app using ```streamlit run your_app_name.py```
+
 Open your web browser and navigate to the specified local host to interact with the application.
 
 ## Contributions
