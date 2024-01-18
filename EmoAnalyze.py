@@ -53,7 +53,12 @@ def analyze():
     if is_valid:
         st.success(message)
         def get_video_comments(video_url):
-            video_id = video_url.split("v=")[1]
+            def extract_video_id(video_url):
+                pattern = re.compile(r'(?:youtu\.be/|youtube\.com/(?:[^/]+/.*[?&]v=|v/|em(?:bed)?/|watch\?(?:.*&)?v=))(?P<videoid>[^"&?/ ]{11})')
+                match = pattern.search(video_url)
+                return match.group('videoid') if match else None
+
+            video_id = extract_video_id(video_url)
             api_service_name = "youtube"
             api_version = "v3"
             #DEVELOPER_KEY=os.getenv("API_KEY")
