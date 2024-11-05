@@ -152,31 +152,31 @@ def analyze():
             st.header("Distribution of Positive, Negative, and Neutral Comments")
             st.pyplot(fig) 
             
-            #word-clouds
-            # Get all words
-            all_words = ' '.join([x for x in comments_df['text']])
-            all_pos_words = ' '.join([x for x in comments_df['text'][comments_df.Sentiment == 'Positive']])
-            all_neg_words = ' '.join([x for x in comments_df['text'][comments_df.Sentiment == 'Negative']])
+            # #word-clouds
+            # # Get all words
+            # all_words = ' '.join([x for x in comments_df['text']])
+            # all_pos_words = ' '.join([x for x in comments_df['text'][comments_df.Sentiment == 'Positive']])
+            # all_neg_words = ' '.join([x for x in comments_df['text'][comments_df.Sentiment == 'Negative']])
             
-            # Create word clouds
-            wordcloud = WordCloud(width=430, height=300, random_state=21, max_font_size=55).generate(all_words)
-            wordcloud_posi = WordCloud(width=430, height=300, random_state=21, max_font_size=55).generate(all_pos_words)
-            wordcloud_negi = WordCloud(width=430, height=300, random_state=21, max_font_size=55).generate(all_neg_words)
+            # # Create word clouds
+            # wordcloud = WordCloud(width=430, height=300, random_state=21, max_font_size=55).generate(all_words)
+            # wordcloud_posi = WordCloud(width=430, height=300, random_state=21, max_font_size=55).generate(all_pos_words)
+            # wordcloud_negi = WordCloud(width=430, height=300, random_state=21, max_font_size=55).generate(all_neg_words)
             
-            # Convert to image using PIL
-            wordcloud_image = Image.fromarray(wordcloud.to_array())
-            wordcloud_posi_image = Image.fromarray(wordcloud_posi.to_array())
-            wordcloud_negi_image = Image.fromarray(wordcloud_negi.to_array())
+            # # Convert to image using PIL
+            # wordcloud_image = Image.fromarray(wordcloud.to_array())
+            # wordcloud_posi_image = Image.fromarray(wordcloud_posi.to_array())
+            # wordcloud_negi_image = Image.fromarray(wordcloud_negi.to_array())
 
-            st.header("Most Frequent Words")
-            st.write("All Words")
-            st.image(wordcloud_image)
+            # st.header("Most Frequent Words")
+            # st.write("All Words")
+            # st.image(wordcloud_image)
 
-            st.write("Most frequent words in positive comments")
-            st.image(wordcloud_posi_image)
+            # st.write("Most frequent words in positive comments")
+            # st.image(wordcloud_posi_image)
             
-            st.write("Most frequent words in negative comments")
-            st.image(wordcloud_negi_image)
+            # st.write("Most frequent words in negative comments")
+            # st.image(wordcloud_negi_image)
             
             #Comments
             sorted_comments = comments_df.sort_values(by='Sentiment Score', ascending=True)
